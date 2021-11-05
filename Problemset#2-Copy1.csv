@@ -1,0 +1,212 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2c306d3a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q1 \n",
+    "Solution :\n",
+    "    \n",
+    ">>> s = 'a+2'\n",
+    ">>> id(s)\n",
+    "a+2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a247c3bb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q2 \n",
+    "Solution\n",
+    "\n",
+    "def file_length(file_name):\n",
+    "    file = open(file_name)\n",
+    "    contents = file.read()\n",
+    "    file.close()\n",
+    "    print(len(contents))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "26c459eb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q3 \n",
+    "Solution \n",
+    "\n",
+    "def kangaroo(x1, v1, x2, v2):\n",
+    "    for n in range(10000):\n",
+    "        if((x1+v1)==(x2+v2)):\n",
+    "            return \"YES\"\n",
+    "        x1+=v1\n",
+    "        x2+=v2\n",
+    "    return \"NO\"\n",
+    "\n",
+    "if __name__ == '__main__':\n",
+    "    fptr = open(os.environ['OUTPUT_PATH'], 'w')\n",
+    "\n",
+    "    x1V1X2V2 = input().split()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6191798f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q4\n",
+    "Solution \n",
+    "\n",
+    "print(\"enter a number:\")\n",
+    "try:\n",
+    "    number = (int(input()))\n",
+    "except ValueError:\n",
+    "          print(\"Please enter a valid INTEGER.\")\n",
+    "\n",
+    "\n",
+    "def collatz(number):\n",
+    "    while number != 1:\n",
+    "\n",
+    "        if number % 2==0:\n",
+    "            number = (number//2)\n",
+    "            #print(number)\n",
+    "            return (print(int(number)))\n",
+    "\n",
+    "        elif nnumber % 2==1:\n",
+    "            number = (3*number+1) \n",
+    "            #print(number)\n",
+    "            return (print(int(number)))\n",
+    "\n",
+    "        continue\n",
+    "\n",
+    "\n",
+    "collatz(number)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "00e88e48",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q5\n",
+    "Solution\n",
+    "\n",
+    "def binaryToDeci(binanumb):\n",
+    "    # Inside the binaryToDeci() function,\n",
+    "    # Check if the binary number is equal to 0 using the if conditional statement.\n",
+    "    if(binanumb == 0):\n",
+    "        # If it is true then return 0.\n",
+    "        return 0\n",
+    "    # Else return (n% 10 + 2* binaryToDeci(n // 10))\n",
+    "    # {Recursive logic where n%10 gives rightmostbit and n//10 divides the number by 10}.\n",
+    "    return (binanumb % 10 + 2 * binaryToDeci(binanumb // 10))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ee680b0b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q\n",
+    "Solution \n",
+    "\n",
+    "<!DOCTYPE html>\n",
+    "<html lang=\"en\">\n",
+    "\n",
+    "<head>\n",
+    "  <meta name=\"description\" content=\"Webpage description goes here\" />\n",
+    "  <meta charset=\"utf-8\">\n",
+    "  <title>Change_me</title>\n",
+    "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n",
+    "  <meta name=\"author\" content=\"\">\n",
+    "  <link rel=\"stylesheet\" href=\"css/style.css\">\n",
+    " def handle_data(self, data):\n",
+    "        print(\"Encountered some data  :\", data)\n",
+    "</head>\n",
+    "\n",
+    "<body>\n",
+    "  \n",
+    "\t<h1>W3C Mission</h1>\n",
+    "\t<h2>Principles</h2>\n",
+    " \n",
+    "\n",
+    "\n",
+    "</body>\n",
+    "</html>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "31f65be8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q8\n",
+    "Solution\n",
+    "\n",
+    "a.\n",
+    "SELECT c.name, count(distinct s.name) as statecount, count(ci.name) citycount\n",
+    "FROM countries c,states s,cities ci\n",
+    "WHERE ci.state_id = s.id\n",
+    "  and s.country_id = c.id\n",
+    "GROUP BY s.name\n",
+    "\n",
+    "b.\n",
+    "WITH city AS (SELECT ST_GEOGPOINT(-122.465, 37.807))\n",
+    "SELECT name, state, ARRAY_AGG(STRUCT(date,temp) ORDER BY temp DESC LIMIT 5) top_hot, MAX(date) station_until\n",
+    "FROM `fh-bigquery.weather_gsod.all_geoclustered`\n",
+    "WHERE EXTRACT(YEAR FROM date) > 1980\n",
+    "AND ST_DISTANCE(point_gis, (SELECT * FROM city))\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b54f4199",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "i_letters = [ letter for letter in 'QUICK' ]\n",
+    "print( i_letters)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
